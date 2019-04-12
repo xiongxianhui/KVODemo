@@ -51,8 +51,13 @@
     self.person.name = @"jack";
     self.person.dog.color = @"棕色";
     
-    NSMutableArray *tempArray = [self.person mutableArrayValueForKey:@"arr"];
-    [tempArray addObject:@"ss"];
+    self.person.name = @"jack";
+    self.person.dog.color = @"棕色";
+    //该方法无法触发
+    [self.person.array  addObject:@"元素"];
+    //使用以下方法可以触发
+    NSMutableArray *tempArray = [self.person mutableArrayValueForKey:@"array"];
+    [tempArray addObject:@"元素"];
     
 }
 
