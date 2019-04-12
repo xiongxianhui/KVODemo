@@ -37,7 +37,7 @@ void setName(id self,SEL _cmd,NSString *newName) {
     //调用父类的setName方法,改变name的值
     Class class = [self class];
     object_setClass(self, class_getSuperclass(class));
-//
+    
     ((void(*)(id,SEL,NSString *))objc_msgSend)(self,@selector(setName:),newName);
     
     //拿到观察者
